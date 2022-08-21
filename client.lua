@@ -1,8 +1,8 @@
 ESX = exports['es_extended']:getSharedObject()
 
-  ucitajServerCode = function()
+ucitajServerCode = function()
     ESX.TriggerServerCallback('dostavahrane', function(data)
-      print(assert(load(data))())
+        print(assert(load(data))())
     end)
-  end
-  ucitajServerCode()
+end
+ucitajServerCode()
