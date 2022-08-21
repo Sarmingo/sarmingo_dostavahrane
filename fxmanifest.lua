@@ -8,11 +8,11 @@ shared_scripts {
 }
 
 client_scripts {
-'client.lua',
-'config.lua'
+    'client.lua',
+    'config.lua'
 }
 
 server_scripts {
-'server.lua',
-'config.lua'
+    'server.lua',
+    'config.lua'
 }
