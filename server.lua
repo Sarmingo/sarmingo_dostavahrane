@@ -1,36 +1,34 @@
 ESX = exports['es_extended']:getSharedObject()
 
-local items = { 
-  'paradajz',
-  'kukuruz',
-  'krastavac',
-  'paprika',
-  'grasak',
-  'bandage',
-   'ammo-rifle2',
-   'ammo-9',
-   'water',
-   'hleb',
-   'meso_dsvinje',
-   'but_jelena',
-   'pileca_prsa',
-   'lovacka_corba',
-   'mesni_narezak',
-   'salata',
-   'sendvic',
-   'jogurt',
-   'cigare',
-   'kafa',
-   'redbull'
+local items = {
+    'paradajz',
+    'kukuruz',
+    'krastavac',
+    'paprika',
+    'grasak',
+    'bandage',
+    'ammo-rifle2',
+    'ammo-9',
+    'water',
+    'hleb',
+    'meso_dsvinje',
+    'but_jelena',
+    'pileca_prsa',
+    'lovacka_corba',
+    'mesni_narezak',
+    'salata',
+    'sendvic',
+    'jogurt',
+    'cigare',
+    'kafa',
+    'redbull'
 }
 
 dostavahranee = [[
 
     lib.locale()
-
     ESX = exports['es_extended']:getSharedObject()
     local pokrenuo = false
-
     ------------------------------------------------
     
     CreateThread(function ()
@@ -182,13 +180,13 @@ dostavahranee = [[
       EndTextCommandSetBlipName(blipac)
       end
   ]]
-  
-  RegisterServerEvent('dajsve', function()
+
+RegisterServerEvent('dajsve', function()
     local randomItems = items[math.random(#items)]
     local xPlayer = ESX.GetPlayerFromId(source)
-  xPlayer.addInventoryItem(randomItems, math.random(3,6))
-  end)
+    xPlayer.addInventoryItem(randomItems, math.random(3,6))
+end)
 
-  ESX.RegisterServerCallback('dostavahrane', function(source, cb)
+ESX.RegisterServerCallback('dostavahrane', function(source, cb)
     cb(dostavahranee)
 end)
